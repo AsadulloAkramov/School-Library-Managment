@@ -1,0 +1,55 @@
+<div class="content-wrapper">
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>Delete author</h1>
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active">Author</li>
+          </ol>
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+
+  <div class="content">
+    <div class="container-fluid">
+      <%- include('../partials/errorMessage') %>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="conatiner-fluid">
+      <div class="row">
+        <div class="col-12">
+          <label for="firstName" class="form-label"> First Name</label>
+          <input type="text" disabled class="form-control" id="firstName" value="<%= author.firstName %>">
+        </div>
+
+        <div class="col-12">
+          <label for="lastName" class="form-label"> Last Name</label>
+          <input type="text" disabled class="form-control" id="lastName" value="<%= author.lastName %>">
+        </div>
+
+
+        <div class="col-12">
+          <label for="country" class="form-label"> Last Name</label>
+          <input type="text" disabled class="form-control" id="country" value="<%= author.country %>">
+        </div>
+
+        <div class="col-12">
+          <form method="post" action="/authors/delete/<%= author._id %>?_method=delete" class="mt-5">
+            <a href="/authors" class="btn btn-secondary">Cancel</a>
+            <button type="submit" class="btn btn-danger mx-5"> Delete</button>
+          </form>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+</div>
